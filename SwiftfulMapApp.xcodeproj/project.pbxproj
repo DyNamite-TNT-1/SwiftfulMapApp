@@ -15,6 +15,7 @@
 		924F45992B0DBBCC00BA6F58 /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F45982B0DBBCB00BA6F58 /* LocationsDataService.swift */; };
 		924F459B2B0DBD2200BA6F58 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F459A2B0DBD2200BA6F58 /* LocationsView.swift */; };
 		924F459D2B0DC18100BA6F58 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F459C2B0DC18100BA6F58 /* LocationsViewModel.swift */; };
+		924F459F2B0DE58600BA6F58 /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F459E2B0DE58600BA6F58 /* LocationsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		924F45982B0DBBCB00BA6F58 /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
 		924F459A2B0DBD2200BA6F58 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		924F459C2B0DC18100BA6F58 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		924F459E2B0DE58600BA6F58 /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				924F459A2B0DBD2200BA6F58 /* LocationsView.swift */,
+				924F459E2B0DE58600BA6F58 /* LocationsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				924F45992B0DBBCC00BA6F58 /* LocationsDataService.swift in Sources */,
+				924F459F2B0DE58600BA6F58 /* LocationsListView.swift in Sources */,
 				924F459D2B0DC18100BA6F58 /* LocationsViewModel.swift in Sources */,
 				924F45852B0DB7FD00BA6F58 /* ContentView.swift in Sources */,
 				924F459B2B0DBD2200BA6F58 /* LocationsView.swift in Sources */,
