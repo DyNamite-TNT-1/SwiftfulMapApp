@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftfulMapApp
 //
-//  Created by hanbiro on 11/22/23.
+//  Created by anhduc on 11/22/23.
 //
 
 import SwiftUI
