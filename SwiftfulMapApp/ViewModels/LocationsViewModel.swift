@@ -26,7 +26,7 @@ class LocationsViewModel: ObservableObject {
     let mapSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
     // Show list of locations
-    @Published var showLocationsList : Bool = false
+    @Published var showLocationsList: Bool = false
     
     init() {
         let locations = LocationsDataService.locations
@@ -52,5 +52,26 @@ class LocationsViewModel: ObservableObject {
             self.mapLocation = location
             self.showLocationsList = false
         }
+    }
+    
+    func nextButtonPressed() {
+        // Get the current index
+        guard let currentIndex = self.locations.firstIndex(where: { $0 == self.mapLocation })
+        else { return }
+        
+        // Check the next index is valid
+        let nextIndex = currentIndex + 1
+        guard self.locations.indices.contains(nextIndex)
+        else {
+            // Next index is NOT valid
+            // Restart from 0
+            guard let firstLocation = self.locations.first  else { return }
+            showNextLocation(location: firstLocation)
+            return
+        }
+        
+        // Next index IS valid
+        let nextLocation = self.locations[nextIndex]
+        showNextLocation(location: nextLocation )
     }
 }
