@@ -19,8 +19,6 @@ struct LocationsView: View {
         ZStack {
             mapLayer
                 .ignoresSafeArea()
-//                .sync($vm.mapRegion, with: $mapRegion)
-//                .sync($vm.mapLocation, with: $mapLocation)
             
             VStack(spacing: 0) {
                 header
@@ -30,6 +28,13 @@ struct LocationsView: View {
                 locationsPreviewStack
             }
         }
+//        .sync($vm.mapRegion, with: $mapRegion)
+//        .onReceive(vm.$mapRegion) { newValue in
+//            mapRegion = newValue
+//        }
+//        .onChange(of: mapRegion) { newValue in
+//            vm.mapRegion = newValue
+//        }
         
     }
 }
@@ -57,7 +62,9 @@ extension LocationsView {
                     }
             }
         })
-        
+        .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
+            LocationDetailView(location: location)
+        }
     }
     
     private var header: some View {
@@ -108,11 +115,11 @@ extension LocationsView {
 extension View {
     func sync<T: Equatable> (_ published: Binding<T>, with binding: Binding<T>) -> some View {
         self
-            .onChange(of:  published.wrappedValue) { value in
+            .onChange(of: published.wrappedValue) { value in
                 print("value", value)
                 binding.wrappedValue = value
             }
-            .onChange(of:  binding.wrappedValue) { value in
+            .onChange(of: binding.wrappedValue) { value in
                 print("value", value)
                 published.wrappedValue = value
             }

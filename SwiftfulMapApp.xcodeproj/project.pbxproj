@@ -18,6 +18,7 @@
 		924F459F2B0DE58600BA6F58 /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F459E2B0DE58600BA6F58 /* LocationsListView.swift */; };
 		925A1C432B0F012700AC18C9 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925A1C422B0F012700AC18C9 /* LocationPreviewView.swift */; };
 		925A1C452B0F300400AC18C9 /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925A1C442B0F300400AC18C9 /* LocationMapAnnotationView.swift */; };
+		92FE4AF32B10351800E6BB2F /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE4AF22B10351800E6BB2F /* LocationDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		924F459E2B0DE58600BA6F58 /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
 		925A1C422B0F012700AC18C9 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		925A1C442B0F300400AC18C9 /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
+		92FE4AF22B10351800E6BB2F /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				924F459E2B0DE58600BA6F58 /* LocationsListView.swift */,
 				925A1C422B0F012700AC18C9 /* LocationPreviewView.swift */,
 				925A1C442B0F300400AC18C9 /* LocationMapAnnotationView.swift */,
+				92FE4AF22B10351800E6BB2F /* LocationDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				924F45852B0DB7FD00BA6F58 /* ContentView.swift in Sources */,
 				924F459B2B0DBD2200BA6F58 /* LocationsView.swift in Sources */,
 				924F45962B0DBA4E00BA6F58 /* Location.swift in Sources */,
+				92FE4AF32B10351800E6BB2F /* LocationDetailView.swift in Sources */,
 				924F45832B0DB7FD00BA6F58 /* SwiftfulMapAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
