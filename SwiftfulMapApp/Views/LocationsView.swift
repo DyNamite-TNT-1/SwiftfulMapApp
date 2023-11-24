@@ -11,9 +11,7 @@ import MapKit
 struct LocationsView: View {
     
     @EnvironmentObject private var vm: LocationsViewModel
-    @State private var mapRegion : MKCoordinateRegion = MKCoordinateRegion()
-    @State private var mapLocation: Location = LocationsDataService.locations.first!
-//    @State private var bool showLocationList = false
+    let maxWidthForIpad: CGFloat = 700
     
     var body: some View {
         ZStack {
@@ -23,19 +21,12 @@ struct LocationsView: View {
             VStack(spacing: 0) {
                 header
                     .padding()
-
+                    .frame(maxWidth: maxWidthForIpad)
+                
                 Spacer()
                 locationsPreviewStack
             }
         }
-//        .sync($vm.mapRegion, with: $mapRegion)
-//        .onReceive(vm.$mapRegion) { newValue in
-//            mapRegion = newValue
-//        }
-//        .onChange(of: mapRegion) { newValue in
-//            vm.mapRegion = newValue
-//        }
-        
     }
 }
 
@@ -87,8 +78,8 @@ extension LocationsView {
                             .rotationEffect(Angle(degrees: vm.showLocationsList ? 180: 0))
                     }
             }
-
-                
+            
+            
             if (vm.showLocationsList) {
                 LocationsListView()
             }
@@ -105,41 +96,15 @@ extension LocationsView {
                     LocationPreviewView(location: location)
                         .shadow(color: Color.black.opacity(0.3), radius: 20)
                         .padding()
+                    /// see from [5:14] in https://www.youtube.com/watch?v=s4RniydY1xc&list=PLwvDm4Vfkdpha5eVTjLM0eRlJ7-yDDwBk&index=9
+                    /// to know why add 2 below frame
+                        .frame(maxWidth: maxWidthForIpad)
+                        .frame(maxWidth: .infinity)
+//                                            .transition(AnyTransition.opacity.animation(.easeInOut))
+//                                            .transition(AnyTransition.scale.animation(.easeInOut))
                         .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                 }
             }
         }
-    }
-}
-
-extension View {
-    func sync<T: Equatable> (_ published: Binding<T>, with binding: Binding<T>) -> some View {
-        self
-            .onChange(of: published.wrappedValue) { value in
-                print("value", value)
-                binding.wrappedValue = value
-            }
-            .onChange(of: binding.wrappedValue) { value in
-                print("value", value)
-                published.wrappedValue = value
-            }
-    }
-}
-
-extension MKCoordinateRegion: Equatable {
-    public static func == (lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
-        return lhs.center == rhs.center && lhs.span == rhs.span
-    }
-}
-
-extension CLLocationCoordinate2D: Equatable {
-    public static func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
-        return lhs.latitude == rhs.latitude && lhs.longitude == lhs.longitude
-    }
-}
-
-extension MKCoordinateSpan: Equatable {
-    public static func == (lhs: MKCoordinateSpan, rhs: MKCoordinateSpan) -> Bool {
-        return lhs.latitudeDelta == rhs.latitudeDelta && lhs.longitudeDelta == rhs.longitudeDelta
     }
 }

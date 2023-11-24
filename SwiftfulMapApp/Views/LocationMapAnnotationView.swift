@@ -2,7 +2,7 @@
 //  LocationMapAnnotationView.swift
 //  SwiftfulMapApp
 //
-//  Created by hanbiro on 11/23/23.
+//  Created by anhduc on 11/23/23.
 //
 
 import SwiftUI
